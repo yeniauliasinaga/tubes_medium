@@ -8,17 +8,17 @@
     <title>Medium</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
-<body>
+
 <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
+  <div class="container">
     <a class="navbar" href="#"><img src="../Logo/simbol.png" style="width:100px; height:70px;"></a>
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:1000px;">
-        <button class="btn btn-outline-success" type="submit">Search Medium</button>
+    <form class="text-center d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:900px;">
+        <button class="btn btn-outline-success" style="width: 140px;" type="submit">Search Medium</button>
       </form>
-    <div class="mx-3">
+    
     <div class="collapse navbar-collapse mx-5" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mx-5 mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Write</a>
         </li>
@@ -48,17 +48,6 @@
         </li>
       </ul>
     </div>
-  </div>
+  
   </div>
 </nav>
-<!-- Optional JavaScript; choose one of the two! -->
-
- <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-</body>
-</html>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

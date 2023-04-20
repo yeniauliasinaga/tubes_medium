@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="Logo/simbol.png" sizes="16x16 32x32" rel="shortcut icon">
     <title>Medium</title>
 </head>
 <body>
 
 <?php
-     if ($logged_in) {
-        include 'tata_letak/atas.php';
-    } else {
         include 'tata_letak/navbar.php';
-    }
 ?>
         <h1 class="title">SYNTAX PHP BERISI JUDUL</h1>
         <header>
@@ -29,7 +26,7 @@
         </header>
         <span class='header-sap'>.  .  .</span>
 
-        <span class='top-highlight'>Top highlight</span>
+        <!--<span class='top-highlight'>Top highlight</span>-->
 
         <article>
             <p class='para-1-1'>
