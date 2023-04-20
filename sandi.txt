@@ -1,0 +1,26 @@
+Daftar akun:
+1)  Nama    : Yeni Aulia Sinaga
+    Pass    : tubes1
+    Email   : yeni@gmail.com
+    Username: yeni
+
+2)  Nama    : Devandra Deal Fatahillah
+    Pass    : tas4
+    Email   : devan@gmail.com
+    Username: devan
+
+3)  Nama    : Sintong Sutanto
+    Pass    : buku2
+    Email   : sintong@gmail.com
+    Username: sintong
+
+4)  Nama    : Dafa Hibrizi
+    Pass    : sepatu5
+    Email   : dafa@gmail.com
+    Username: dafa
+
+5)  Nama    : Frengky Sutanto
+    Pass    : pensil3
+    Email   : frengky@gmail.com
+    Username: frengky
+
