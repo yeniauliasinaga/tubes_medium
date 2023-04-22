@@ -1,5 +1,5 @@
 <?php
-include '../tata_letak/atas.php';
+include 'tata_letak/navbar_login.php';
 ?>
 <div class="container text-start">
   <div class="row">
@@ -7,6 +7,7 @@ include '../tata_letak/atas.php';
 <div class="container">
 <div class="container text-start mr-5 mt-5">
   <div class="row row-cols-auto mr-5 mt-5">
+    <div class="col"><a href="halaman.php?page=suggestion"><img src="Logo/plus.png" width="35px"></a></div>
     <div class="col">For you</div>
     <div class="col">Following</div>
     <div class="col">Technology</div>
@@ -255,10 +256,7 @@ include '../tata_letak/atas.php';
 </div>
 </div>
 
- <!-- Optional JavaScript; choose one of the two! -->
-
- <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

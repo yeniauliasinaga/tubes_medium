@@ -1,6 +1,6 @@
 <?php 
 require ('koneksi.php');
-include 'tata_letak/navbaratas.php'; 
+include 'tata_letak/navbar_index.php'; 
 ?>  
   
   <!-- Trending Container - Start -->

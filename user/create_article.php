@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="../Logo/simbol.png" sizes="16x16 32x32" rel="shortcut icon">
     <title>Medium</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">

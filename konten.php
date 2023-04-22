@@ -11,7 +11,7 @@
 <body>
 
 <?php
-        include 'tata_letak/navbar.php';
+        include 'tata_letak/navbar_nologin.php';
 ?>
         <h1 class="title">SYNTAX PHP BERISI JUDUL</h1>
         <header>
