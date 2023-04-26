@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Logo/simbol.png" sizes="16x16 32x32" rel="shortcut icon">
     <title>Medium</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 
@@ -49,6 +48,5 @@
         </li>
       </ul>
     </div>
-  
   </div>
 </nav>
