@@ -157,11 +157,7 @@ include 'tata_letak/navbar_index.php';
      </article>
        </div>
    </div>
-    <!-- Trending Container - End -->
-    
-    
-
-    
+    <!-- Trending Container - End -->    
 <div class="container py-5">
   <div class="row">
     <article class="col-12 col-sm-8 mt-2">

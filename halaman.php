@@ -9,8 +9,12 @@ if (isset($_GET['page'])) {
         case 'ourstory':
             include 'ourstory.php';
             break;
+        case 'creators':
+            include 'creators.php';
+            break;
         case 'write':
-            include 'write.php';
+            include 'tata_letak/navbar_create.php';
+            include 'user/write.php';
             break;
         case 'signin':
             include 'login.php';
@@ -43,10 +47,22 @@ if (isset($_GET['page'])) {
             include 'tata_letak/navbar_login.php';
             include 'user/about.php';
             break;
+        case 'profile':
+            include 'tata_letak/navbar_login.php';
+            include 'user/profile.php';
+            break;
+        case 'library':
+            include 'tata_letak/navbar_login.php';
+            include 'user/your_lists.php';
+            break;
+        case 'stories':
+            include 'tata_letak/navbar_login.php';
+            include 'user/stories.php';
+            break;
 
         default:
             include 'tata_letak/navbaratas.php';
-            include 'index.php';
+            include 'landing_page.php';
             break;
     }
 } else {

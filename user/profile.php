@@ -46,76 +46,36 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Profile Information</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Profile information</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="modal-body">
-                                        <div class="ly l">
-                                            <div class="uu l">
-                                                    <div class="xu l">
-                                                        <label class="be b bf z dn">Photo</label>
-                                                    </div>
-                                                    <div class="ab">
-                                                            <div class="l dj">
-                                                                <img src="../Logo/logo.png" width="80" height="80">
-                                                            </div>
-                                                        </button>
-                                                        <div class="text-center mt-3">
-                                                            <div class="row row-cols-auto">
-                                                                <div class="col">
-                                                                <button type="button" class="btn btn-outline-success">Update</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                <button type="button" class="btn btn-outline-danger">Remove</button>
-                                                                </div>
-                                                            </div>
-                                                            </div>
-                                                            <p class="be b bf z dn">Recommended: Square JPG, PNG, or
-                                                                GIF, at least 1,000 pixels per side.</p>
-                                                        </div>
-                                                    </div>
+                                        <p>Photo</p>
+                                        <div class="row">
+                                            <div class="col-sm-3"><img src="" alt="ini gambar"></div>
+                                            <div class="col-sm-8">
+                                                <div class="col">
+                                                    <a href="">Update</a>
+                                                    <a href=""> Remove</a>
+                                                </div>
+                                                <div class="col">
+                                                    <p>Recommended: Square JPG, PNG, or GIF, at least 1,000 pixels per
+                                                        side.</p>
                                                 </div>
                                             </div>
-                                            <div class="uu l">
-                                                <span class="mx-5">
-                                                    <div class="bg ab ed">
-                                                        <label class="xu dn">Name*</label>
-                                                        <div class="ab bg tb xw xx">
-                                                            <input type="text" name="name" value="">
-                                                        </div>
-                                                        <div class="mc ab kf">
-                                                            <p class="be b do z dn">Appears on your Profile page, as
-                                                                your byline, and in your responses.</p>
-                                                            <p class="be b do z dn">
-                                                                <span class="gs">17</span>/50
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <span class="mt-0">
-                                                <div class="mt-2">
-                                                    <label class="xu dn">Bio</label>
-                                                    <div class="ab bg tb xw xx">
-                                                        <input class="xy aj ah al xz ya yb yc bk yd ye" type="text"
-                                                            name="bio" value="" fdprocessedid="gqjce">
-                                                    </div>
-                                                    <div class="mc ab kf">
-                                                        <p class="be b do z dn">Appears on your Profile and next to your stories.</p>
-                                                        <p class="be b do z dn">
-                                                            <span class="gs">0</span>/160
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </span>
+                                        </div>
+                                        <div class="text-start">
+                                            <p>Name*</p>
+                                            <input type="text">
+                                            <p class="mt-3">Bio</p>
+                                            <input type="text">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
+                                        <button type="button" class="btn btn-outline-success"
                                             data-bs-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-success">Save</button>
                                     </div>
                                 </div>
                             </div>
