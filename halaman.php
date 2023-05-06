@@ -61,7 +61,7 @@ if (isset($_GET['page'])) {
             break;
 
         default:
-            include 'tata_letak/navbaratas.php';
+            include 'tata_letak/navbar_login.php';
             include 'landing_page.php';
             break;
     }
