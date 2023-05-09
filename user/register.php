@@ -1,5 +1,6 @@
 <?php
-"Di isi dengan php"
+	require '../koneksi.php';
+    include 'fungsi.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Logo/simbol.png" sizes="16x16 32x32" rel="shortcut icon">
+    <link href="../Logo/simbol.png" sizes="16x16 32x32" rel="shortcut icon">
     <title>Medium</title>
     <style>
 
@@ -80,29 +81,25 @@
         <nav>
             <div class="icon">
                 <a href="index.html">
-                    <img
-                src="Logo/logo.png"
-                alt="logo"
-              />
-                </a>
-                
+                    <img src="../Logo/logo.png" alt="logo"/>
+                </a> 
             </div>
             <hr>
         </nav>
       </header>
     <div class="signup">
 
-     <form id="form">
+     <form action="" method="POST">
          <h1><b>Create an account</b></h1>
-         <input type="email" id="email" placeholder="Email address" required><br>
-         <input type="text" id="fname" placeholder="Firstname" required><br>
-         <input type="text" placeholder="lastname" id="lname" required><br>
-         <input type="password" id="pass" placeholder="Password" required><br>
+
+         <input type="text" name="nama" id="fname" placeholder="Name" required><br>
+         <input type="email" name="email" id="email" placeholder="Email address" required><br>
+         <input type="password" name="password" id="pass" placeholder="Password" required><br>
          <p>By creating an account, I agree to the Medium <a>Terms and Conditions</a> and <a>Privacy Statement</a>.</p>
-         <button>Continue</button>
+         <button name="btn_daftar" type="submit">Continue</button>
         
      </form>
-     <p>Already have an account? <a href="signin.html">Sign in</a></p>
+     <p>Already have an account? <a href="">Sign in</a></p>
     </div>
 </body>
 </html>
