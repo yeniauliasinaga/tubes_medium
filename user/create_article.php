@@ -1,3 +1,8 @@
+<?php
+	require '../koneksi.php';
+    include 'coba.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +20,6 @@
     <script src="assets/ckeditor/ckeditor.js"></script>
 </head>
 <body>
-    <?php include '../tata_letak/navbar_create.php';?>
     <div class="container">
         <div class="row">
             <div class="col-md-25">
@@ -37,7 +41,7 @@
                                                     value="">
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control input-sm" name="teks_berita" id="editor"
+                                                <textarea class="form-control input-sm" name="isi" id="editor"
                                                     placeholder="Tell your story" rows="15"></textarea>
                                             </div>
                                         </div>
@@ -45,21 +49,19 @@
                                         <div class="form-group">
                                             <input type="file" name="gambar" id="gambar">
                                             <label class="text-muted">Ukuran gambar maks 2 MB</label>
-                                </div>
-                                </div>
+                                        </div>
+                                        </div>
                                 <div class="col-sm-12 mt-3">
                                     <div class="form-group">
-                                        <input type="date" class="form-control input-sm" name="tgl_posting" value=""
-                                            disabled>
+                                        <input type="date" class="form-control input-sm" name="tgl_artikel" value="<?php  echo date("Y-m-d"); ?>" required readonly >
                                     </div>
                                     <div class="form-group mt-3">
                                         <label>Topic</label>
-                                        <select class="form-control input-sm mt-3" name="kategori">
+                                        <select class="form-control input-sm mt-3" name="tag">
                                             <option value="">Choose the topic</option>
-                                            <option value="Isi dengan php"></option>
                                         </select>
                                     </div>
-                                    <button class="btn btn-sm btn-primary mt-3" type="submit" name="btn_publish">
+                                    <button class="btn btn-sm btn-primary mt-3" type="submit" name="btn_tambah">
                                         <i class="fa fa-check"></i> Publish
                                     </button>
                                 </div>

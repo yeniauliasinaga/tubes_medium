@@ -37,3 +37,34 @@ if(isset($_POST["btn_daftar"])){
         </script>";
     }
 }
+
+function create_article($artikel){
+    global $koneksi;
+    $judul=htmlspecialchars($artikel["judul"]);
+    $isi=htmlspecialchars($artikel["isi"]);
+    $kategori = $_POST['tag'];
+    $tanggal = $_POST['tgl_artikel'];
+    $id_pengguna = $_SESSION['nama'];
+    $gambar = $_FILES['gambar'];
+
+        $insert="INSERT INTO tb_artikel(id_artikel, judul, isi, nama, tag) VALUES
+        ('','$judul', '$isi', '$nama', '$tag','$tgl_artikel')";
+        mysqli_query($koneksi, $insert);
+
+    return mysqli_affected_rows($koneksi);
+}
+
+if(isset($_POST["btn_tambah"])){
+    if(create_article($_POST)>0){
+        echo "<script>
+        alert('Berita berhasil ditambahkan!');
+        document.location.href='../dashboard-login.php';
+        </script>";  
+    }
+    else{
+        echo "<script>
+        alert('Berita gagal ditambahkan');
+        document.location.href='../dashboard-login.php';
+        </script>";
+    }
+}
