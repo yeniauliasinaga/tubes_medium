@@ -1,5 +1,5 @@
 <?php
-include 'tata_letak/navbar_login.php';
+include '../tata_letak/navbar_login.php';
 ?>
 <div class="container text-start">
   <div class="row">
@@ -7,7 +7,7 @@ include 'tata_letak/navbar_login.php';
 <div class="container">
 <div class="container text-start mr-5 mt-5">
   <div class="row row-cols-auto mr-5 mt-5">
-    <div class="col"><a href="halaman.php?page=suggestion"><img src="Logo/plus.png" width="35px"></a></div>
+    <div class="col"><a href="halaman.php?page=suggestion"><img src="../Logo/plus.png" width="35px"></a></div>
     <div class="col">For you</div>
     <div class="col">Following</div>
     <div class="col">Technology</div>
@@ -193,7 +193,7 @@ include 'tata_letak/navbar_login.php';
 </div>
 
 <!-- kolom 2-->
-<?php include 'tata_letak/sidebar.php'; ?>
+<?php include '../tata_letak/sidebar.php'; ?>
 
 </div>
 </div>

@@ -6,27 +6,11 @@ if (isset($_GET['page'])) {
         case 'halarticle':
             include 'konten.php';
             break;
-        case 'ourstory':
-            include 'ourstory.php';
-            break;
-        case 'creators':
-            include 'creators.php';
-            break;
-        case 'write':
-            include 'tata_letak/navbar_create.php';
-            include 'user/write.php';
-            break;
         case 'signin':
             include 'login.php';
             break;
         case 'following':
             include 'user/following.php';
-            break;
-        case 'readinghistory':
-            include 'user/reading_history.php';
-            break;
-        case 'muted':
-            include 'user/muted.php';
             break;
         case 'suggestion':
             include 'user/refine_recommended.php';
@@ -39,10 +23,6 @@ if (isset($_GET['page'])) {
             include 'tata_letak/navbar_login.php';
             include 'user/home.php';
             break;
-        case 'lists':
-            include 'tata_letak/navbar_login.php';
-            include 'user/lists.php';
-            break;
         case 'about':
             include 'tata_letak/navbar_login.php';
             include 'user/about.php';
@@ -53,7 +33,7 @@ if (isset($_GET['page'])) {
             break;
         case 'library':
             include 'tata_letak/navbar_login.php';
-            include 'user/your_lists.php';
+            include 'user/library.php';
             break;
         case 'stories':
             include 'tata_letak/navbar_login.php';
@@ -66,6 +46,6 @@ if (isset($_GET['page'])) {
             break;
     }
 } else {
-    include 'tata_letak/navbaratas.php';
+    include 'tata_letak/navbar_login.php';
     include 'index.php';
 }

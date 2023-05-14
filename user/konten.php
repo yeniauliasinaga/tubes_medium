@@ -12,9 +12,7 @@
 
 <body>
 
-    <?php
-        include 'tata_letak/navbar_nologin.php';
-?>
+    <?php include 'tata_letak/navbar_login.php';?>
     <h1 class="title">SYNTAX PHP BERISI JUDUL</h1>
     <header>
         <div class="profile-1">

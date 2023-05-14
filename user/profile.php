@@ -7,8 +7,6 @@
             <div class="text-center mt-5 pt-3">
                 <div class="row row-cols-auto">
                     <a class="col" style="text-decoration: none; color: black;" href="">Home</a>
-                    <a class="col" style="text-decoration: none; color: black;" href="">Lists</a>
-                    <a class="col" style="text-decoration: none; color: black;" href="">About</a>
                 </div>
             </div>
         </div>

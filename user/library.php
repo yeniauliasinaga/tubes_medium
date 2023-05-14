@@ -15,12 +15,15 @@
 
                 <div class="text-center mt-5">
                     <div class="row row-cols-auto">
-                        <a class="col" style="text-decoration: none; color: black;"
-                            href="halaman.php?page=library">Your lists</a>
-                        <a class="col" style="text-decoration: none; color: black;"
-                            href="halaman.php?page=saved">Saved lists</a>
-                        <a class="col" style="text-decoration: none; color: black;"
-                            href="halaman.php?page=highlights">Highlights</a>
-                        <a class="col" style="text-decoration: none; color: black;"
-                            href="halaman.php?page=readinghistory">Reading history</a>
+                        <a class="col" style="text-decoration: none; color: black;" href="halaman.php?page=saved">Saved
+                            lists</a>
+                    </div>
+                    <div class="container text-start">
+                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                        <div class="row">
+                            <div class="text-start m-5 p-5">
+                                <p>No lists from others.</P>
+                                <p>Save someone else's list and it will appear here.</p>
+                            </div>
+                        </div>
                     </div>

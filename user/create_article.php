@@ -1,6 +1,5 @@
 <?php
 	require '../koneksi.php';
-    include 'coba.php';
 ?>
 
 <!DOCTYPE html>
