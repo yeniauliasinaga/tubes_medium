@@ -19,10 +19,6 @@ if (isset($_GET['page'])) {
         case 'notifications':
             include 'user/notifications.php';
             break; 
-        case 'home':
-            include 'tata_letak/navbar_login.php';
-            include 'user/home.php';
-            break;
         case 'about':
             include 'tata_letak/navbar_login.php';
             include 'user/about.php';

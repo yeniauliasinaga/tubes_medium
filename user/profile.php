@@ -6,7 +6,7 @@
             <h1>SYNTAX PHP NAMA USER</h1>
             <div class="text-center mt-5 pt-3">
                 <div class="row row-cols-auto">
-                    <a class="col" style="text-decoration: none; color: black;" href="">Home</a>
+                    <a class="col" style="text-decoration: none; color: black;" href="home.php">Home</a>
                 </div>
             </div>
         </div>
