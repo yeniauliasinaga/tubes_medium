@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse mx-5" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="create_story.php">Write</a>
+                    <a class="nav-link active" aria-current="page" href="create_article.php">Write</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="halaman.php?page=notifications"><img src="../Logo/notifikasi.webp"

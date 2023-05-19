@@ -42,11 +42,11 @@
                                 <form action="" method="post" enctype="multipart/form-data">
                                     <div class="col-sm-15">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="judul" placeholder="Title"
+                                            <input type="text" class="form-control" name="judul_story" placeholder="Title"
                                                 value="">
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control input-sm" name="isi" id="editor"
+                                            <textarea class="form-control input-sm" name="isi_story" id="editor"
                                                 placeholder="Tell your story" rows="15"></textarea>
                                         </div>
                                     </div>

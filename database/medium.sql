@@ -31,39 +31,40 @@ CREATE TABLE `tb_artikel` (
   `id_artikel` int(30) NOT NULL,
   `id_pengguna` int(30) NOT NULL,
   `id_tag` int(30) NOT NULL,
-  `judul` varchar(256) NOT NULL,
-  `isi` varchar(256) NOT NULL
+  `judul_artikel` varchar(256) NOT NULL,
+  `isi_artikel` varchar(256) NOT NULL,
+  `gambar` varchar(60) NOT NULL,
+  `tgl_artikel` date NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_artikel`
 --
 
-INSERT INTO `tb_artikel` (`id_artikel`, `id_pengguna`, `id_tag`, `judul`, `isi`) VALUES
-(1, 1, 1, 'Why Coding is Sexy', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'),
-(2, 2, 2, 'Why Everyone is Obsessed With Ui and Ux', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(3, 3, 3, 'The Evolution of Education', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
-(4, 4, 4, 'Doing Creativities the Right Way', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(5, 5, 5, 'Designs by the Numbers', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.'),
-(6, 6, 6, 'Who Really Uses Futures?', 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt'),
-(7, 7, 7, '14 Ways Art is a Dying Art', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.'),
-(8, 8, 8, '15 Least Favorite Music', 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?'),
-(9, 9, 9, 'Don\'t Hold Back Your Film', 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'),
-(10, 10, 10, 'Why Photographies are the New Black', 'Et harum quidem uta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.'),
-(11, 11, 11, 'The 12 Biggest Family Blunders', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corr et dolorum fuga.'),
-(12, 12, 12, '6 Ways Sciences Can Make You Rich', 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae'),
-(13, 13, 13, '10 Uses for Mental Health', 'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'),
-(14, 14, 14, 'The Life Article of Your Dreams', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.'),
-(15, 15, 15, 'How Money is Like a School Bully', 'magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora'),
-(16, 16, 16, '10 Problems with Bussinesses', 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '),
-(17, 17, 17, 'How Technologies are the New Hotness', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.'),
-(18, 18, 18, 'How Programming Made Me a Better Person', 'quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur'),
-(19, 19, 19, 'Why Everyone is Obsessed With Gaming', 'quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?  qui dolorem eum fugiat quo voluptas nulla pariatur?'),
-(20, 20, 20, 'Why Humor is Killing You', 'inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit');
+INSERT INTO `tb_artikel` (`id_artikel`, `id_pengguna`, `id_tag`, `judul_artikel`, `isi_artikel`, `gambar`, `tgl_artikel`) VALUES
+(1, 1, 1, 'Why Coding is Sexy', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco','coding.jpg','2023-02-13'),
+(2, 2, 2, 'Why Everyone is Obsessed With Ui and Ux', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'design.png','2023-03-07'),
+(3, 3, 3, 'The Evolution of Education', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.','education.png','2023-03-15'),
+(4, 4, 4, 'Doing Creativities the Right Way', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','produktif.webp','2023-04-17'),
+(5, 5, 5, 'Designs by the Numbers', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.','UX-UI-Design.jpg','2023-02-15'),
+(6, 6, 6, 'Who Really Uses Futures?', 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt','future.jpg','2023-03-12'),
+(7, 7, 7, '14 Ways Art is a Dying Art', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.','art.jpg','2023-03-24'),
+(8, 8, 8, '15 Least Favorite Music', 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?','musik.png','2023-03-21'),
+(9, 9, 9, 'Dont Hold Back Your Film', 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','film.jpg','2023-01-21'),
+(10, 10, 10, 'Why Photographies are the New Black', 'Et harum quidem uta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.','fotograpi.jpg','2023-01-27'),
+(11, 11, 11, 'The 12 Biggest Family Blunders', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corr et dolorum fuga.','family.webp','2023-01-17'),
+(12, 12, 12, '6 Ways Sciences Can Make You Rich', 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae','kaya.jpg','2023-01-27'),
+(13, 13, 13, '10 Uses for Mental Health', 'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.','mental.png','2023-02-13'),
+(14, 14, 14, 'The Life Article of Your Dreams', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.','dream.jpeg','2023-02-15'),
+(15, 15, 15, 'How Money is Like a School Bully', 'magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora','bully.jpg','2023-03-11'),
+(16, 16, 16, '10 Problems with Bussinesses', 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ','bisnis.jpg','2023-02-18'),
+(17, 17, 17, 'How Technologies are the New Hotness', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.','teknologi.jpg','2023-03-19'),
+(18, 18, 18, 'How Programming Made Me a Better Person', 'quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur','program.webp','2023-03-10'),
+(19, 19, 19, 'Why Everyone is Obsessed With Gaming', 'quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?  qui dolorem eum fugiat quo voluptas nulla pariatur?','gaming.jpeg','2023-02-01'),
+(20, 20, 20, 'Why Humor is Killing You', 'inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','humor.jpg','2023-05-10');
 
--- --------------------------------------------------------
-
---
+-- -------------------------------------------------------
 -- Table structure for table `tb_komentar`
 --
 
@@ -274,6 +275,50 @@ INSERT INTO `tb_tag` (`id_tag`, `tag`) VALUES
 (19, 'Gaming'),
 (20, 'Humor');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_story`
+--
+
+CREATE TABLE `tb_story` (
+  `id_story` int(30) NOT NULL,
+  `id_pengguna` int(30) NOT NULL,
+  `id_tag` int(30) NOT NULL,
+  `judul_story` varchar(256) NOT NULL,
+  `isi_story` varchar(256) NOT NULL,
+  `gambar` varchar(60) NOT NULL,
+  `tgl_story` date NOT NULL
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_story`
+--
+
+INSERT INTO `tb_story` (`id_story`, `id_pengguna`, `id_tag`, `judul_story`, `isi_story`, `gambar`, `tgl_story`) VALUES
+(1, 1, 1, 'Why Coding is Sexy', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco','coding.jpg','2023-02-13'),
+(2, 2, 2, 'Why Everyone is Obsessed With Ui and Ux', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'design.png','2023-03-07'),
+(3, 3, 3, 'The Evolution of Education', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.','education.png','2023-03-15'),
+(4, 4, 4, 'Doing Creativities the Right Way', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','produktif.webp','2023-04-17'),
+(5, 5, 5, 'Designs by the Numbers', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.','UX-UI-Design.jpg','2023-02-15'),
+(6, 6, 6, 'Who Really Uses Futures?', 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt','future.jpg','2023-03-12'),
+(7, 7, 7, '14 Ways Art is a Dying Art', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.','art.jpg','2023-03-24'),
+(8, 8, 8, '15 Least Favorite Music', 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?','musik.png','2023-03-21'),
+(9, 9, 9, 'Dont Hold Back Your Film', 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','film.jpg','2023-01-21'),
+(10, 10, 10, 'Why Photographies are the New Black', 'Et harum quidem uta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.','fotograpi.jpg','2023-01-27'),
+(11, 11, 11, 'The 12 Biggest Family Blunders', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corr et dolorum fuga.','family.webp','2023-01-17'),
+(12, 12, 12, '6 Ways Sciences Can Make You Rich', 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae','kaya.jpg','2023-01-27'),
+(13, 13, 13, '10 Uses for Mental Health', 'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.','mental.png','2023-02-13'),
+(14, 14, 14, 'The Life Article of Your Dreams', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.','dream.jpeg','2023-02-15'),
+(15, 15, 15, 'How Money is Like a School Bully', 'magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora','bully.jpg','2023-03-11'),
+(16, 16, 16, '10 Problems with Bussinesses', 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ','bisnis.jpg','2023-02-18'),
+(17, 17, 17, 'How Technologies are the New Hotness', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.','teknologi.jpg','2023-03-19'),
+(18, 18, 18, 'How Programming Made Me a Better Person', 'quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur','program.webp','2023-03-10'),
+(19, 19, 19, 'Why Everyone is Obsessed With Gaming', 'quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?  qui dolorem eum fugiat quo voluptas nulla pariatur?','gaming.jpeg','2023-02-01'),
+(20, 20, 20, 'Why Humor is Killing You', 'inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','humor.jpg','2023-05-10');
+
+
 --
 -- Indexes for dumped tables
 --
@@ -284,6 +329,14 @@ INSERT INTO `tb_tag` (`id_tag`, `tag`) VALUES
 ALTER TABLE `tb_artikel`
   ADD PRIMARY KEY (`id_artikel`),
   ADD KEY `tb_artikel_ibfk_1` (`id_pengguna`),
+  ADD KEY `id_tag` (`id_tag`);
+
+--
+-- Indexes for table `tb_story`
+--
+ALTER TABLE `tb_story`
+  ADD PRIMARY KEY (`id_story`),
+  ADD KEY `tb_story_ibfk_1` (`id_pengguna`),
   ADD KEY `id_tag` (`id_tag`);
 
 --
@@ -331,6 +384,12 @@ ALTER TABLE `tb_tag`
 --
 ALTER TABLE `tb_artikel`
   MODIFY `id_artikel` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `tb_story`
+--
+ALTER TABLE `tb_story`
+  MODIFY `id_story` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tb_komentar`

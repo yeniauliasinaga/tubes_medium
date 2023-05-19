@@ -43,8 +43,8 @@ if (isset($_POST["btn_daftar"])) {
 function create_story($story)
 {
     global $koneksi;
-    $judul = htmlspecialchars($story["judul"]);
-    $isi = htmlspecialchars($story["isi"]);
+    $judul = htmlspecialchars($story["judul_story"]);
+    $isi = htmlspecialchars($story["isi_story"]);
     $kategori = $_POST['id_tag'];
     $tgl_story = $_POST['tgl_story'];
     $id_pengguna = $_SESSION['id_pengguna'];
@@ -59,10 +59,10 @@ function create_story($story)
     // pindahkan file
     $terupload = move_uploaded_file($namaSementara, $dirUpload . $namaFile);
     
-    $insert = "INSERT INTO tb_story (id_pengguna, id_tag, judul, isi, gambar, tgl_story)
+    $tambah = "INSERT INTO tb_story (id_pengguna, id_tag, judul_story, isi_story, gambar, tgl_story)
                VALUES ('$id_pengguna', '$kategori', '$judul', '$isi', '$namaFile', '$tgl_story')";
     
-    mysqli_query($koneksi, $insert);
+    mysqli_query($koneksi, $tambah);
     
     return mysqli_affected_rows($koneksi);
 }
@@ -112,12 +112,12 @@ return mysqli_affected_rows($koneksi);
     if ($create_article > 0) {
         echo "<script>
         alert('Artikel berhasil ditambahkan!');
-        document.location.href='stories.php';
+        document.location.href='index.php';
         </script>";
     } else {
         echo "<script>
         alert('Artikel gagal ditambahkan');
-        document.location.href='create_story.php';
+        document.location.href='create_article.php';
         </script>";
     }
 }
