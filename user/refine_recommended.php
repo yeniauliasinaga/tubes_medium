@@ -11,8 +11,10 @@ include '../tata_letak/navbar_login.php';
                 your reading history, and who you’ve muted.</p>
             <div class="text-center mt-5">
                 <div class="row row-cols-auto">
-                    <a class="col" style="text-decoration: none; color: black;" href="halaman.php?page=following">Following</a>
-                    <a class="col" style="text-decoration: none; color: black;" href="halaman.php?page=suggestion">Suggestion</a>
+                    <a class="col" style="text-decoration: none; color: black;"
+                        href="halaman.php?page=following">Following</a>
+                    <a class="col" style="text-decoration: none; color: black;"
+                        href="halaman.php?page=suggestion">Suggestion</a>
                 </div>
             </div>
         </div>
@@ -21,3 +23,12 @@ include '../tata_letak/navbar_login.php';
         <div class="col-sm-3">
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
+    </script>
+    </body>
+
+    </html>

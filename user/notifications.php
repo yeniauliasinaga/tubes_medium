@@ -38,9 +38,9 @@ include 'tata_letak/navbar_login.php';
                         Staff Picks
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Dihubungkan dengan php ke title dan penulis</li>
-                        <li class="list-group-item">Dihubungkan dengan php ke title dan penulis</li>
-                        <li class="list-group-item">Dihubungkan dengan php ke title dan penulis</li>
+                        <li class="list-group-item">Notifikasi</li>
+                        <li class="list-group-item">Notifikasi</li>
+                        <li class="list-group-item">Notifikasi</li>
                     </ul>
                     <a href="#" class="text-success mt-3 ms-3 mb-3">See the full list</a>
                 </div>
@@ -53,7 +53,8 @@ include 'tata_letak/navbar_login.php';
                             <ul class="list-inline">
                                 <li class="list-inline-item btn btn-outline-secondary mb-3"> <small>Writing</small></li>
                                 <li class="list-inline-item btn btn-outline-secondary mb-3">
-                                    <small>Relationships</small> </li>
+                                    <small>Relationships</small>
+                                </li>
                                 <li class="list-inline-item btn btn-outline-secondary mb-3"> <small>Marchine
                                         Learning</small></li>
                                 <li class="list-inline-item btn btn-outline-secondary mb-3"> <small>Productivity</small>
@@ -61,7 +62,8 @@ include 'tata_letak/navbar_login.php';
                                 <li class="list-inline-item btn btn-outline-secondary mb-3"> <small>Politics</small>
                                 </li>
                                 <li class="list-inline-item btn btn-outline-secondary mb-3">
-                                    <small>Cryptocurrency</small> </li>
+                                    <small>Cryptocurrency</small>
+                                </li>
                                 <li class="list-inline-item btn btn-outline-secondary mb-3"> <small>Psychology</small>
                                 </li>
                             </ul>
@@ -104,7 +106,10 @@ include 'tata_letak/navbar_login.php';
     </div>
 </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

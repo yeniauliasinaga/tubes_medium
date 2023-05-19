@@ -4,6 +4,7 @@
 
     $tag="SELECT *FROM tb_tag";
     $result = mysqli_query($koneksi, $tag);
+
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +27,8 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-25 mt-5">
-                <h2 class="page-header"><i class="fa fa-newspaper-o"></i> Article</h2>
+            <div class="col-md-25 mt-5 mb-5">
+                <h2 class="page-header"><i class="fa fa-newspaper-o"></i> Story </h2>
             </div>
         </div>
     </div>
@@ -41,11 +42,11 @@
                                 <form action="" method="post" enctype="multipart/form-data">
                                     <div class="col-sm-15">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="judul_artikel"
-                                                placeholder="Title" value="">
+                                            <input type="text" class="form-control" name="judul" placeholder="Title"
+                                                value="">
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control input-sm" name="isi_artikel" id="editor"
+                                            <textarea class="form-control input-sm" name="isi" id="editor"
                                                 placeholder="Tell your story" rows="15"></textarea>
                                         </div>
                                     </div>
@@ -57,30 +58,29 @@
                                     </div>
                                     <div class="col-sm-12 mt-3">
                                         <div class="form-group">
-                                            <input type="date" class="form-control input-sm" name="tgl_artikel"
+                                            <input type="date" class="form-control input-sm" name="tgl_story"
                                                 value="<?php  echo date("Y-m-d"); ?>" required readonly>
                                         </div>
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <label>Tag</label>
-                                        <select class="form-control input-sm mt-3" name="id_tag">
-                                            <?php while($panggil = mysqli_fetch_assoc($result)){
+                                        <div class="form-group mt-3">
+                                            <label>Tag</label>
+                                            <select class="form-control input-sm mt-3" name="id_tag">
+                                                <?php while($panggil = mysqli_fetch_assoc($result)){
                                                 echo" <option value=$panggil[id_tag]>$panggil[tag]</option>";
                                             }?>
-                                        </select>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary mt-3 mb-5" type="submit"
+                                            name="btn_tambah">
+                                            <i class="fa fa-check"></i> Publish
+                                        </button>
                                     </div>
-                                    <button class="btn btn-sm btn-primary mt-3 mb-5" type="submit"
-                                        name="btn_tambah_artikel">
-                                        <i class="fa fa-check"></i> Publish
-                                    </button>
+                                </form>
                             </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

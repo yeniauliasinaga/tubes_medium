@@ -7,6 +7,8 @@
             <div class="text-center mt-5 pt-3">
                 <div class="row row-cols-auto">
                     <a class="col" style="text-decoration: none; color: black;" href="home.php">Home</a>
+                    <a class="col" style="text-decoration: none; color: black;" href="create_article.php">Create
+                        Article</a>
                 </div>
             </div>
         </div>
