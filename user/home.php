@@ -34,6 +34,7 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Edit story</a></li>
+                                <li><a class="dropdown-item" href="#">Pin author</a></li>
                                 <li><a class="dropdown-item" href="#">Story settings</a></li>
                                 <li><a class="dropdown-item" href="#">Story stats</a></li>
                                 <li><a class="dropdown-item" href="#">Hide Responses</a></li>

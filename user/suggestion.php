@@ -1,3 +1,5 @@
+<?php include 'refine_recommended.php'; ?>
+
 <!--Follow penulis-->
 <h4 class="mt-5">Who to follow</h4>
 <div class="card w-75 mt-3">

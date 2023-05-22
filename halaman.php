@@ -6,8 +6,11 @@ if (isset($_GET['page'])) {
         case 'halarticle':
             include 'konten.php';
             break;
-        case 'write':
-            include 'user/create_story.php';
+        case 'signin':
+            include 'user/login.php';
+            break;
+        case 'following':
+            include 'user/following.php';
             break;
         case 'suggestion':
             include 'user/refine_recommended.php';

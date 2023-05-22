@@ -1,4 +1,25 @@
 <?php include 'navbar.php'; ?>
+<?php include '../koneksi.php'; ?>
+<?php include '../user/fungsi.php'; ?>
+<?php
+
+$id = $_GET["id_pengguna"];
+
+$data = query("SELECT * FROM tb_pengguna WHERE id_pengguna='$id'")[0];
+
+if (isset($_POST['btn_edit'])) {
+
+
+    if (ubah($_POST)>0) {
+        echo "<script>
+        alert('Akun anda telah berhasil di ubah!');
+        document.location.href='pengguna.php';
+        </script> ";
+    }
+
+    else echo mysqli_error($koneksi);
+}
+?>
 
 
 <div class="container">
@@ -20,46 +41,67 @@
                 Edit Data Akun
             </div>
             <div class=" mx-2 my-2 row">
-                <form action="update_pengguna.php" method="POST" class="my-login-validation mt-3 ml-3" novalidate="">
+
+                <form action="" method="POST" class="my-login-validation mt-3 ml-3" enctype="multipart/form-data" novalidate="">
+
                     <div class="form-group">
+                        <input type="hidden" name="id" value="<?=$data['id_pengguna']?>">
                         <label for="username">Username</label>
-                        <input type="hidden" name="id" value="...">
-                        <input id="username" type="text" class="form-control" name="username" value="..." required
-                            autofocus>
+                        <input id="username" type="text" class="form-control" name="nama" value="<?=$data['nama']?>" required
+                        autofocus>
                         <div class="invalid-feedback">
                             Silahkan isi username anda
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="name">Nama</label>
-                        <input id="name" type="text" class="form-control" name="nama" value="..." required autofocus>
-                        <div class="invalid-feedback">
-                            Ketik nama anda
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="level">Level</label>
-                        <select name='level' required id='level'>
-                            <option value='admin' <?=$option_admin?>>Admin</option>
-                            <option value='pengguna' <?=$option_pengguna?>>Pengguna</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Ketik level yang anda inginkan
-                        </div>
-                    </div>
-
+                    
                     <div class="form-group">
                         <label for="email">E-Mail Address</label>
-                        <input id="email" type="email" class="form-control" name="email" value="..." required>
+                        <input id="email" type="email" class="form-control" name="email" value="<?=$data['email']?>" required>
                         <div class="invalid-feedback">
                             Email invalid
                         </div>
                     </div>
 
+
+                    <div class="form-group">
+                        <input type="hidden" name="gambarlama" value="<?=$data['foto_profil']?>">
+                        <label for="gambar">Foto Profil</label>
+
+                        
+                            <img src="../user/img/<?=$data['foto_profil']?>" alt="gambar_diri">
+                        <br><br>
+                        
+
+                         <input id="gambar" type="file" class="form-control" name="gambar" >
+                    </div>
+
+                    <div class="from-group">  <br>     </div>
+
+                    <div class="form-group">
+                                <label for="role">Role</label>
+                                <select name='role' required id ='role'>
+                                <?php
+                                if ($data['role'] == 'admin'){
+                                    $option_admin= "selected";
+                                    $option_user = "";
+                                }
+                                else
+                                if ($data['role'] == 'user'){
+                                    $option_admin = "";
+                                    $option_user = "selected";                                  
+                                }
+                                ?>
+                                <option value='admin' <?=$option_admin?>>Admin</option>
+                                <option value='user' <?=$option_user?>>User</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Ketik User yang anda inginkan
+                                </div>
+                            </div>
+
+
                     <div class="form-group m-0">
-                        <button type="submit" class="btn btn-primary btn-block">
+                        <button type="submit" name="btn_edit" class="btn btn-primary btn-block">
                             Ubah Data
                         </button>
                     </div>

@@ -4,6 +4,21 @@
 
     $tag="SELECT *FROM tb_tag";
     $result = mysqli_query($koneksi, $tag);
+
+    if (isset($_POST["btn_tambah_artikel"])) {
+        $create_article = create_article($_POST);
+        if ($create_article > 0) {
+            echo "<script>
+            alert('Artikel berhasil ditambahkan!');
+            document.location.href='index.php';
+            </script>";
+        } else {
+            echo "<script>
+            alert('Artikel gagal ditambahkan');
+            document.location.href='create_article.php';
+            </script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>

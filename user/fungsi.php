@@ -2,42 +2,305 @@
 
 include '../koneksi.php';
 
+function registrasi($pengguna){
+    global $koneksi;
+    $nama=stripslashes(htmlspecialchars($pengguna["nama"]));
+    $email=htmlspecialchars($pengguna["email"]);
+    $password=htmlspecialchars($pengguna["password"]);
+    $password2=htmlspecialchars($pengguna["password2"]);
 
-/* fungsi untuk register */
-function register($pengguna)
+    //upload gambar dimasukkan ke function upload
+    $gambar = upload();
+    
+    if(!$gambar)
+    {
+        return false;
+    }
+
+
+    // cek username sudah ada atau belum
+    $result = mysqli_query($koneksi, "SELECT nama FROM tb_pengguna WHERE nama='$nama'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "<script>
+        alert('nama tersebut sudah ada! Silahkan pilih nama lain');
+        document.location.href='register.php';
+        </script>"; 
+
+    }
+
+    //cek konfirmasi password
+    if ($password!==$password2) {
+        echo "<script>
+        alert('Konfirmasi password Anda tidak sama!');
+        document.location.href='register.php';
+        </script>";  
+
+        return false;
+    }
+
+    //enkripsi password
+
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    //TAMBAHKAN USER BARU KE DATABASE
+    mysqli_query($koneksi,"INSERT INTO tb_pengguna VALUES('','$nama','$email','$password','$gambar','user')");
+
+    return mysqli_affected_rows($koneksi);
+   
+}
+
+//fungsi upload gambar
+
+function upload()
+{
+    $namaFile = $_FILES['gambar']['name'];
+    $ukuranFile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    //cek apakah tidak ada gambar yang di upload
+    if ($error===4) {
+        echo "<script>
+        alert('pilih gambar terlebih dahulu!');
+        document.location.href='register.php';
+        </script>"; 
+
+        return false;
+    }
+
+
+    //cek apakah yang di upload adalah gambar
+    $ekstensiGambarValid = ['jpg','jpeg','png'];
+
+    $ekstensiGambar = explode('.',$namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+    if ( !in_array($ekstensiGambar,$ekstensiGambarValid)) {
+        
+        echo "<script>
+        alert('yang Anda upload bukan gambar!');
+        document.location.href='register.php';
+        </script>"; 
+
+        return false;
+    }
+
+    if ($ukuranFile > 2000000) {
+        echo "<script>
+        alert('ukuran gambar terlalu besar !!');
+        document.location.href='register.php';
+        </script>"; 
+
+        return false;
+    }
+
+    //lolos pengecekan , gambar siap di upload
+
+    // generate nama baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName,'../user/img/'.$namaFileBaru);
+
+    return $namaFileBaru;
+
+}
+
+
+
+function create_article($artikel)
 {
     global $koneksi;
-    $nama = htmlspecialchars($pengguna["nama"]);
-    $email = htmlspecialchars($pengguna["email"]);
-    $password = htmlspecialchars($pengguna["password"]);
-
-    $periska_email = mysqli_query($koneksi, "SELECT email FROM tb_pengguna WHERE email='$email'");
-    if (mysqli_num_rows($periska_email) > 0) {
-        echo "<script>
-        alert('Email anda telah terdaftar! Silahkan Login!');
-        document.location.href='login.php';
-        </script>";
-    } else {
-        $insert = "INSERT INTO tb_pengguna(id_pengguna, nama, email, password) VALUES
-        ('','$nama', '$email', '$password')";
-        mysqli_query($koneksi, $insert);
+    $id_pengguna = $_SESSION['id_pengguna'];
+    $kategori = $_POST['id_tag'];
+    $judul_artikel = htmlspecialchars($artikel["judul_artikel"]);
+    $isi_artikel = htmlspecialchars($artikel["isi_artikel"]);
+    $tanggal = $_POST['tgl_artikel'];
+    $gambar = upload();
+    
+    if(!$gambar)
+    {
+        return false;
     }
+
+// // ambil data file
+// $namaFile = $_FILES['gambar']['name'];
+// $namaSementara = $_FILES['gambar']['tmp_name'];
+
+// // tentukan lokasi file akan dipindahkan
+// $dirUpload = "../assets/berita/";
+
+// // pindahkan file
+// $terupload = move_uploaded_file($namaSementara, $dirUpload . $namaFile);
+
+$insert = "INSERT INTO tb_artikel (id_artikel, id_pengguna, id_tag, judul_artikel, isi_artikel, gambar, tgl_artikel)
+VALUES ('','$id_pengguna', '$kategori', '$judul_artikel', '$isi_artikel', '$gambar', '$tanggal')";
+
+mysqli_query($koneksi, $insert);
+
+return mysqli_affected_rows($koneksi);
+}
+
+
+// fungsi untuk menampilkan dan disimpan dalam sebuah array
+function query($data){
+    
+    global $koneksi ;
+    
+    $query = mysqli_query($koneksi,$data);
+    
+    $lingkup = [];
+    while($ambil= mysqli_fetch_assoc($query))
+    {
+        $lingkup[] = $ambil;
+    
+    }
+    return $lingkup;
+    
+    }
+
+
+
+//tambah pengguna
+//
+function tambah_pengguna($pengguna){
+    global $koneksi;
+    $nama=stripslashes(htmlspecialchars($pengguna["nama"]));
+    $email=htmlspecialchars($pengguna["email"]);
+    $password=htmlspecialchars($pengguna["password"]);
+    $password2=htmlspecialchars($pengguna["password2"]);
+    $role=$pengguna["role"];
+
+    //upload gambar dimasukkan ke function upload
+    $gambar = upload();
+    
+    if(!$gambar)
+    {
+        return false;
+    }
+
+
+    // cek username sudah ada atau belum
+    $result = mysqli_query($koneksi, "SELECT nama FROM tb_pengguna WHERE nama='$nama'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "<script>
+        alert('nama tersebut sudah ada! Silahkan pilih nama lain');
+        document.location.href='tambah_pengguna.php';
+        </script>"; 
+
+    }
+
+    //cek konfirmasi password
+    if ($password!==$password2) {
+        echo "<script>
+        alert('Konfirmasi password Anda tidak sama!');
+        document.location.href='tambah_pengguna';
+        </script>";  
+
+        return false;
+    }
+
+    //enkripsi password
+
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    //TAMBAHKAN USER BARU KE DATABASE
+    mysqli_query($koneksi,"INSERT INTO tb_pengguna VALUES('','$nama','$email','$password','$gambar','$role')");
+
+    return mysqli_affected_rows($koneksi);
+   
+}
+
+
+function ubah($data)
+{
+    global $koneksi;
+
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama"]);
+    $email = htmlspecialchars($data["email"]);
+    $role = htmlspecialchars($data["role"]);
+    $gambarLama = htmlspecialchars($data["gambarlama"]);
+
+    //cek apakah user pilih gambar baru atau tidak
+    if ($_FILES['gambar']['error']==4) {
+       $gambar = $gambarLama;
+    }else{
+        $gambar = upload_edit();
+    }
+   
+    
+    $query = "UPDATE tb_pengguna SET
+                nama = '$nama',
+                email = '$email',
+                role = '$role',
+                foto_profil = '$gambar'
+            WHERE id_pengguna = $id;
+    ";
+
+    mysqli_query($koneksi,$query);
+
     return mysqli_affected_rows($koneksi);
 }
 
-if (isset($_POST["btn_daftar"])) {
-    if (register($_POST) > 0) {
+function upload_edit()
+{
+    $namaFile = $_FILES['gambar']['name'];
+    $ukuranFile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    //cek apakah tidak ada gambar yang di upload
+    if ($error===4) {
         echo "<script>
-        alert('Akun anda telah berhasil didaftar! Silahkan Login!');
-        document.location.href='login.php';
-        </script>";
-    } else {
-        echo "<script>
-        alert('Akun anda tidak dapat terdaftar!');
-        document.location.href='register.php';
-        </script>";
+        alert('pilih gambar terlebih dahulu!');
+        document.location.href='penguna.php';
+        </script>"; 
+
+        return false;
     }
+
+
+    //cek apakah yang di upload adalah gambar
+    $ekstensiGambarValid = ['jpg','jpeg','png'];
+
+    $ekstensiGambar = explode('.',$namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+    if ( !in_array($ekstensiGambar,$ekstensiGambarValid)) {
+        
+        echo "<script>
+        alert('yang Anda upload bukan gambar!');
+        document.location.href='pengguna.php';
+        </script>"; 
+
+        return false;
+    }
+
+    if ($ukuranFile > 2000000) {
+        echo "<script>
+        alert('ukuran gambar terlalu besar !!');
+        document.location.href='pengguna.php';
+        </script>"; 
+
+        return false;
+    }
+
+    //lolos pengecekan , gambar siap di upload
+
+    // generate nama baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName,'../user/img/'.$namaFileBaru);
+
+    return $namaFileBaru;
+
 }
+
 
 /* fungsi untuk tambah story */
 function create_story($story)
@@ -121,3 +384,6 @@ return mysqli_affected_rows($koneksi);
         </script>";
     }
 }
+
+
+

@@ -1,7 +1,4 @@
-<?php 
-include '../koneksi.php';
-include '../tata_letak/navbar_login.php';
-?>
+<?php include '../tata_letak/navbar_login.php';?>
 
 <div class="container text-start">
     <!-- Stack the columns on mobile by making one full-width and the other half-width -->
@@ -13,13 +10,14 @@ include '../tata_letak/navbar_login.php';
                     <h1 class="text-start">Your Stories</h1>
                 </div>
                 <div class="col">
-                    <a type="button" href="create_story.php" class="btn btn-success btn-rounded">Write a
-                        story</a>
+                    <button type="button" class="btn btn-success btn-rounded me-3">Write a story</button>
+                    <button type="button" class="btn btn-outline-secondary circle">Import a story</button>
                 </div>
 
                 <div class="text-center mt-5">
                     <div class="row row-cols-auto">
-                        <h5 class="col-sm-6" style="text-decoration: none; color: black;">Published</h5>
+                        <a class="col" style="text-decoration: none; color: black;"
+                            href="halaman.php?page=readinghistory">Published</a>
                     </div>
                 </div>
             </div>
@@ -53,12 +51,7 @@ include '../tata_letak/navbar_login.php';
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -15,20 +15,29 @@ $id=$_GET['id_artikel'];
 
 ?>
 
-<?php
-    if (empty($_SESSION['id_pengguna'])) {
 
-            include '../tata_letak/navbar_nologin.php';
-        
-        } else{
-            include '../tata_letak/navbar_login.php';
-        }
-        
-        // include '../tata_letak/navbar_login.php';
-    ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link href="../Logo/simbol.png" sizes="16x16 32x32" rel="shortcut icon">
+    <title>Medium</title>
+</head>
 
 <body>
 
+    <?php
+    if ($_SESSION['id_pengguna']) {
+        include '../tata_letak/navbar_login.php';
+    } else{
+        include '../tata_letak/navbar_nologin.php';
+    }
+    
+    ?>
     <h1 class="title">SYNTAX PHP BERISI JUDUL</h1>
     <header>
         <div class="profile-1">

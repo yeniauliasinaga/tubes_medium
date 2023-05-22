@@ -209,34 +209,35 @@ CREATE TABLE `tb_pengguna` (
   `nama` varchar(50) NOT NULL,
   `email` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `foto_profil` varchar(256) NOT NULL
+  `foto_profil` varchar(256) NOT NULL,
+  `role` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_pengguna`
 --
 
-INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `password`, `foto_profil`) VALUES
-(1, 'Ade Puspasari', 'adepusari@gmail.com', 'rahasia1234', ''),
-(2, 'Austin Levesque', 'austue@gmail.com', 'rahasia1235', ''),
-(3, 'Ernestina Williamson', 'erneon@gmail.com', 'rahasia1236', ''),
-(4, 'Côme Bonnet', 'comeboet@gmail.com', 'rahasia1237', ''),
-(5, 'Legawa Prakasa', 'legawasa@gmail.com', 'rahasia1238', ''),
-(6, 'Abigail Edwards', 'abigards@gmail.com', 'rahasia1239', ''),
-(7, 'Martino Peter', 'marter@gmail.com', 'rahasia1240', ''),
-(8, 'Maeva Leclerc', 'maevaerc@gmail.com', 'rahasia1241', ''),
-(9, 'Daliman Prasetyo', 'dalimyo@gmail.com', 'rahasia1242', ''),
-(10, 'Felix Wright', 'felixght@gmail.com', 'rahasia1243', ''),
-(11, 'Ashley Vermeulen', 'ashlen@gmail.com', 'rahasia1244', ''),
-(12, 'Augustin Laurent', 'augunt@gmail.com', 'rahasia1245', ''),
-(13, 'Catur Haryanto', 'catunto@gmail.com', 'rahasia1246', ''),
-(14, 'Citlalli Spencer', 'citlacer@gmail.com', 'rahasia1247', ''),
-(15, 'Luke Green', 'lukegeen@gmail.com', 'rahasia1248', ''),
-(16, 'Julia Marie', 'juliamrie@gmail.com', 'rahasia1249', ''),
-(17, 'Vincenzo Neri', 'vinceri@gmail.com', 'rahasia1250', ''),
-(18, 'Evelyn Kelly', 'evelynlly@gmail.com', 'rahasia1251', ''),
-(19, 'Olivia Martin', 'oliviatin@gmail.com', 'rahasia1252', ''),
-(20, 'Joshua Reed', 'joshueed@gmail.com', 'rahasia1253', '');
+INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `password`, `foto_profil`, `role`) VALUES
+(1, 'Ade Puspasari', 'adepusari@gmail.com', 'rahasia1234', '','pengguna'),
+(2, 'Austin Levesque', 'austue@gmail.com', 'rahasia1235', '','pengguna'),
+(3, 'Ernestina Williamson', 'erneon@gmail.com', 'rahasia1236', '','pengguna'),
+(4, 'Côme Bonnet', 'comeboet@gmail.com', 'rahasia1237', '','pengguna'),
+(5, 'Legawa Prakasa', 'legawasa@gmail.com', 'rahasia1238', '','pengguna'),
+(6, 'Abigail Edwards', 'abigards@gmail.com', 'rahasia1239', '','pengguna'),
+(7, 'Martino Peter', 'marter@gmail.com', 'rahasia1240', '','pengguna'),
+(8, 'Maeva Leclerc', 'maevaerc@gmail.com', 'rahasia1241', '','pengguna'),
+(9, 'Daliman Prasetyo', 'dalimyo@gmail.com', 'rahasia1242', '','pengguna'),
+(10, 'Felix Wright', 'felixght@gmail.com', 'rahasia1243', '','pengguna'),
+(11, 'Ashley Vermeulen', 'ashlen@gmail.com', 'rahasia1244', '','pengguna'),
+(12, 'Augustin Laurent', 'augunt@gmail.com', 'rahasia1245', '','pengguna'),
+(13, 'Catur Haryanto', 'catunto@gmail.com', 'rahasia1246', '','pengguna'),
+(14, 'Citlalli Spencer', 'citlacer@gmail.com', 'rahasia1247', '','pengguna'),
+(15, 'Luke Green', 'lukegeen@gmail.com', 'rahasia1248', '','pengguna'),
+(16, 'Julia Marie', 'juliamrie@gmail.com', 'rahasia1249', '','pengguna'),
+(17, 'Vincenzo Neri', 'vinceri@gmail.com', 'rahasia1250', '','pengguna'),
+(18, 'Evelyn Kelly', 'evelynlly@gmail.com', 'rahasia1251', '','pengguna'),
+(19, 'Olivia Martin', 'oliviatin@gmail.com', 'rahasia1252', '','pengguna'),
+(20, 'Joshua Reed', 'joshueed@gmail.com', 'rahasia1253', '','pengguna');
 
 -- --------------------------------------------------------
 
