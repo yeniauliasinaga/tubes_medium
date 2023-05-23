@@ -3,14 +3,6 @@ require "../koneksi.php";
 
 
 //cek apakah anda sudah login jika sudah maka nggak bole ke login.php
-// if (isset($_SESSION['btn_login'])) {
-  
-//   echo"<script>
-//     alert('Anda telah login, silahkan logout terlebih dahulu');
-//      </script>";
-//   header("Location: index.php");
-//   exit;
-// }
 
 if(isset ($_POST["btn_login"])){
   $nama_login = $_POST['nama'];
@@ -66,41 +58,6 @@ if(isset ($_POST["btn_login"])){
     
   }
 
-  // $result=mysqli_query($koneksi, $login);
-  // while($masuk=mysqli_fetch_assoc($result)){
-  //   $id=$masuk['id_pengguna'];
-  //   $nama=$masuk['nama'];
-  //   $password=$masuk['password'];
-  //   $email=$masuk['email'];
-  // }
-  // if(mysqli_num_rows($result)== 1){
-  //   $masuk=mysqli_fetch_assoc($result);
-  //   if($nama_login==$nama && $pass_login== $password){
-  //     SESSION_START();
-  //     $_SESSION['id_pengguna']=$id;
-  //     echo"<script>
-  //     alert('Anda sudah berhasil login');
-  //     document.location.href='../dashboard-login.php'
-  //     </script>";
-  //   }
-  // }
-  // else{
-  //   $error=true;
-  //   echo"<script>
-  //   alert('Anda tidak berhasil login');
-  //   document.location.href='login.php'
-  //   </script>";
-  // }
-
-  // $error = true;
-
-  // if (isset($error)) {
-  //   echo"<script>
-  //   alert('Anda tidak berhasil login');
-  //    document.location.href='login.php'
-  //    </script>";
-  // }
-
 }
 ?>
 
@@ -136,7 +93,7 @@ if(isset ($_POST["btn_login"])){
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group pt-3">
                           <label for="password"> Password </label>
                           <input id="password" type="password" class="form-control" name="password" required data-eye>
                             <div class="invalid-feedback">

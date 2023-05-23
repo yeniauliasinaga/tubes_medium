@@ -13,7 +13,7 @@
   <div class="container">
     <a class="navbar" href="#"><img src="../Logo/simbol.png" style="width:100px; height:70px;"></a>
     <form class="text-center d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:900px;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:750px;">
         <button class="btn btn-outline-success" style="width: 140px;" type="submit">Search Medium</button>
       </form>
     
@@ -23,7 +23,7 @@
           <a class="nav-link active" aria-current="page" href="../user/create_article.php">Write</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="halaman.php?page=notifications" ><img src="../Logo/notifikasi.webp" style="width:20px; height:20px;"></a>
+          <a class="nav-link" href="../user/notifications.php" ><img src="../Logo/notifikasi.webp" style="width:20px; height:20px;"></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -10,11 +10,13 @@ if (!isset($_SESSION['id_pengguna'])) {
     exit;
 }
 
-$query = "SELECT *
+        $query = "SELECT *
         FROM tb_artikel, tb_pengguna, tb_tag
         WHERE tb_artikel.id_pengguna = tb_pengguna.id_pengguna
         AND tb_artikel.id_tag = tb_tag.id_tag
         ORDER BY RAND()";
+
+
 
 $result = mysqli_query($koneksi, $query);
 ?>
@@ -28,10 +30,6 @@ $result = mysqli_query($koneksi, $query);
                         <div class="col"><a href="../user/suggestion.php"><img src="../Logo/plus.png" width="35px"></a>
                         </div>
                         <div class="col">For you</div>
-                        <div class="col">Following</div>
-                        <div class="col">Technology</div>
-                        <div class="col">Data Science</div>
-                        <div class="col">Programming</div>
                     </div>
                 </div>
             </div>
@@ -45,9 +43,11 @@ $result = mysqli_query($koneksi, $query);
                             <div class="card-body">
                                 <small>
                                     <img class="rounded-circle img-responsive" src="img/<?=$artikel['foto_profil']?>"
-                                        alt="">
+                                        alt=""
+                                        style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
                                     <?=$artikel['nama']?>
                                 </small>
+
                                 <br>
                                 <h5 class="font-weight-bold my-2">
                                     <a href="konten.php?id_artikel=<?=$artikel['id_artikel']?>" style="color: black">
@@ -64,9 +64,6 @@ $result = mysqli_query($koneksi, $query);
                                     <li class="list-inline-item">
                                         <small>.</small>
                                     </li>
-                                    <li class="list-inline-item">
-                                        <small><?php rand(1, 7)?> min read</small>
-                                    </li>
                                     <li class="list-inline-item small">
                                         <small><i class="fas fa-star"><?=$artikel['tag']?></i></small>
                                     </li>
@@ -75,7 +72,8 @@ $result = mysqli_query($koneksi, $query);
                                     </li>
                                 </ul>
                                 <div class="col-3">
-                                    <img class="w-100  d-none d-sm-block" src="../assets/berita/<?=$artikel['gambar']?>" alt="gambar">
+                                    <img class="w-100  d-none d-sm-block" src="../assets/berita/<?=$artikel['gambar']?>"
+                                        alt="gambar">
                                 </div>
                             </div>
                         </div>
