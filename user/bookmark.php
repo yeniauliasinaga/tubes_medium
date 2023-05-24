@@ -1,5 +1,4 @@
 <?php
-include '../tata_letak/navbar_login.php';
 require '../koneksi.php';
 
 if (!isset($_SESSION['id_pengguna'])) {
@@ -44,25 +43,6 @@ if (isset($_GET['id_penanda'])) {
 }
 ?>
 
-<div class="container text-start">
-    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-    <div class="row">
-        <div class="col m-5 p-3">
-            <div class="row">
-                <div class="col-7">
-                    <h1 class="text-start">Your Library</h1>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-success btn-rounded me-3">New List</button>
-                </div>
-            </div>
-
-            <div class="text-center mt-5">
-                <div class="row row-cols-auto">
-                    <h4><a class="col" style="text-decoration: none; color: black;" href="library.php">Your
-                            lists</a></h4>
-                    <span></span>
-                </div>
                 <!-- bookmark -->
                 <div class="row">
                     <div class="text-start m-3">

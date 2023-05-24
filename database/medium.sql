@@ -62,7 +62,13 @@ INSERT INTO `tb_artikel` (`id_artikel`, `id_pengguna`, `id_tag`, `judul_artikel`
 (17, 17, 17, 'How Technologies are the New Hotness', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.','teknologi.jpg','2023-03-19'),
 (18, 18, 18, 'How Programming Made Me a Better Person', 'quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur','program.webp','2023-03-10'),
 (19, 19, 19, 'Why Everyone is Obsessed With Gaming', 'quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?  qui dolorem eum fugiat quo voluptas nulla pariatur?','gaming.jpeg','2023-02-01'),
-(20, 20, 20, 'Why Humor is Killing You', 'inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','humor.jpg','2023-05-10');
+(20, 20, 20, 'Why Humor is Killing You', 'inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','humor.jpg','2023-05-10'),
+(21, 21, 21, 'Cara Efektif untuk Meningkatkan Produktivitas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam ante id sagittis congue. Sed posuere nulla in convallis tristique. Duis vel iaculis urna. Aenean malesuada quam in dolor bibendum egestas. Curabitur facilisis condimentum lectus sed vulputate. Quisque eget feugiat purus, at vulputate lacus. Vestibulum viverra justo nec purus bibendum, ut euismod ex aliquam. Nullam varius sem a mauris feugiat vehicula. Donec lobortis neque a libero varius, vel elementum dolor iaculis. Etiam scelerisque sem nec sapien consectetur ullamcorper. Quisque eget quam et sem egestas tempus.', 'produktif.jpeg', '2023-02-13'),
+(22, 22, 22, 'Pentingnya Keamanan Informasi dalam Era Digital', 'Pada zaman yang serba digital seperti sekarang, keamanan informasi menjadi hal yang sangat penting. Banyak kasus kebocoran data dan serangan siber yang terjadi. Oleh karena itu, perlu adanya langkah-langkah yang efektif untuk menjaga keamanan informasi kita. Dalam artikel ini, kami akan membahas mengenai pentingnya keamanan informasi dan beberapa tips untuk menjaga keamanan informasi pribadi dan bisnis Anda.', 'data_sekuriti.jpg', '2023-03-07'),
+(23, 23, 23, 'Memanfaatkan Teknologi AI untuk Pengembangan Bisnis', 'Teknologi kecerdasan buatan (AI) telah membawa dampak besar dalam dunia bisnis. Dengan kemampuannya untuk mengolah data secara cepat dan akurat, AI dapat membantu meningkatkan efisiensi operasional, memprediksi tren pasar, dan memberikan pengalaman pelanggan yang lebih baik. Dalam artikel ini, kami akan menjelaskan lebih lanjut mengenai pemanfaatan teknologi AI dalam pengembangan bisnis dan bagaimana mengimplementasikannya dengan efektif.', 'ai.jpeg', '2023-03-15'),
+(24, 24, 24, 'Strategi Pemasaran Digital yang Efektif', 'Pemasaran digital telah menjadi salah satu kunci sukses dalam dunia bisnis saat ini. Dengan strategi pemasaran yang tepat, bisnis dapat menjangkau target audiens secara luas dan efektif. Artikel ini akan membahas beberapa strategi pemasaran digital yang efektif, termasuk optimasi mesin pencari (SEO), media sosial, dan pemasaran konten. Dengan mengimplementasikan strategi ini, bisnis Anda dapat meningkatkan visibilitas dan mencapai hasil yang lebih baik.', 'digital.jpeg', '2023-04-17'),
+(25, 25, 25, 'Tren Terkini dalam Desain Grafis', 'Industri desain grafis terus berkembang seiring dengan perkembangan teknologi dan perubahan gaya visual. Dalam artikel ini, kami akan membahas beberapa tren terkini dalam desain grafis, seperti desain minimalis, tipografi eksperimental, dan efek ilustrasi. Mengetahui tren terbaru dapat membantu desainer grafis untuk tetap relevan dan menciptakan karya-karya yang menarik dan inovatif.', 'trending.jpeg', '2023-02-15');
+
 
 -- -------------------------------------------------------
 -- Table structure for table `tb_komentar`
@@ -210,34 +216,38 @@ CREATE TABLE `tb_pengguna` (
   `email` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
   `foto_profil` varchar(256) NOT NULL,
+  `bio` varchar(256) NOT NULL,
   `role` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Dumping data for table `tb_pengguna`
 --
 
-INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `password`, `foto_profil`, `role`) VALUES
-(1, 'Ade Puspasari', 'adepusari@gmail.com', 'rahasia1234', '','pengguna'),
-(2, 'Austin Levesque', 'austue@gmail.com', 'rahasia1235', '','pengguna'),
-(3, 'Ernestina Williamson', 'erneon@gmail.com', 'rahasia1236', '','pengguna'),
-(4, 'Côme Bonnet', 'comeboet@gmail.com', 'rahasia1237', '','pengguna'),
-(5, 'Legawa Prakasa', 'legawasa@gmail.com', 'rahasia1238', '','pengguna'),
-(6, 'Abigail Edwards', 'abigards@gmail.com', 'rahasia1239', '','pengguna'),
-(7, 'Martino Peter', 'marter@gmail.com', 'rahasia1240', '','pengguna'),
-(8, 'Maeva Leclerc', 'maevaerc@gmail.com', 'rahasia1241', '','pengguna'),
-(9, 'Daliman Prasetyo', 'dalimyo@gmail.com', 'rahasia1242', '','pengguna'),
-(10, 'Felix Wright', 'felixght@gmail.com', 'rahasia1243', '','pengguna'),
-(11, 'Ashley Vermeulen', 'ashlen@gmail.com', 'rahasia1244', '','pengguna'),
-(12, 'Augustin Laurent', 'augunt@gmail.com', 'rahasia1245', '','pengguna'),
-(13, 'Catur Haryanto', 'catunto@gmail.com', 'rahasia1246', '','pengguna'),
-(14, 'Citlalli Spencer', 'citlacer@gmail.com', 'rahasia1247', '','pengguna'),
-(15, 'Luke Green', 'lukegeen@gmail.com', 'rahasia1248', '','pengguna'),
-(16, 'Julia Marie', 'juliamrie@gmail.com', 'rahasia1249', '','pengguna'),
-(17, 'Vincenzo Neri', 'vinceri@gmail.com', 'rahasia1250', '','pengguna'),
-(18, 'Evelyn Kelly', 'evelynlly@gmail.com', 'rahasia1251', '','pengguna'),
-(19, 'Olivia Martin', 'oliviatin@gmail.com', 'rahasia1252', '','pengguna'),
-(20, 'Joshua Reed', 'joshueed@gmail.com', 'rahasia1253', '','pengguna');
+INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `password`, `foto_profil`,`bio`, `role`) VALUES
+(1, 'Ade Puspasari', 'adepusari@gmail.com', 'rahasia1234', 'chenle.jpeg','sedang pundung', 'pengguna'),
+(2, 'Austin Levesque', 'austue@gmail.com', 'rahasia1235', 'haechan.jpeg','aku ganteng', 'pengguna'),
+(3, 'Ernestina Williamson', 'erneon@gmail.com', 'rahasia1236', 'hendery.jpeg','aku juga bisa gila', 'pengguna'),
+(4, 'Côme Bonnet', 'comeboet@gmail.com', 'rahasia1237', 'Jaehyun.jpeg','aku anak orang kaya', 'pengguna'),
+(5, 'Legawa Prakasa', 'legawasa@gmail.com', 'rahasia1238', 'jaemin.jpeg','aku anak tunggal', 'pengguna'),
+(6, 'Abigail Edwards', 'abigards@gmail.com', 'rahasia1239', 'jennie.jpeg','member blackpink', 'pengguna'),
+(7, 'Martino Peter', 'marter@gmail.com', 'rahasia1240', 'jeno.jpeg','aku bersinar', 'pengguna'),
+(8, 'Maeva Leclerc', 'maevaerc@gmail.com', 'rahasia1241', 'Jisung.jpeg','aku maknae', 'pengguna'),
+(9, 'Daliman Prasetyo', 'dalimyo@gmail.com', 'rahasia1242', 'john.jpeg','aku anak tunggal kaya raya', 'pengguna'),
+(10, 'Felix Wright', 'felixght@gmail.com', 'rahasia1243', 'jun.jpeg','aku kuat', 'pengguna'),
+(11, 'Ashley Vermeulen', 'ashlen@gmail.com', 'rahasia1244', 'kun.jpeg','aku bisa apa aja', 'pengguna'),
+(12, 'Augustin Laurent', 'augunt@gmail.com', 'rahasia1245', 'lisa.jpeg','aku jago dance', 'pengguna'),
+(13, 'Catur Haryanto', 'catunto@gmail.com', 'rahasia1246', 'mark.jpeg','aku ada disemua unit', 'pengguna'),
+(14, 'Citlalli Spencer', 'citlacer@gmail.com', 'rahasia1247', 'ryunjin.jpeg','aku dari itzy', 'pengguna'),
+(15, 'Luke Green', 'lukegeen@gmail.com', 'rahasia1248', 'shutaro.jpeg','aku dah keluar nct', 'pengguna'),
+(16, 'Julia Marie', 'juliamrie@gmail.com', 'rahasia1249', 'sungchan.jpeg','aku juga keluar nct', 'pengguna'),
+(17, 'Vincenzo Neri', 'vinceri@gmail.com', 'rahasia1250', 'tae.jpeg','aku leader nct u', 'pengguna'),
+(18, 'Evelyn Kelly', 'evelynlly@gmail.com', 'rahasia1251', 'wendy.jpeg','aku member rv', 'pengguna'),
+(19, 'Olivia Martin', 'oliviatin@gmail.com', 'rahasia1252', 'winwin.jpeg','aku primadona nct', 'pengguna'),
+(20, 'Joshua Reed', 'joshueed@gmail.com', 'rahasia1253', 'yuta.jpeg','aku orang jepang hehe', 'pengguna'),
+(102, 'Sintong L.Tobing', 'sintongtobing@gmail.com', '$2y$10$5aQLJ97Afj/2QM3fZVsXM.oH2BZj90HGFxI8Rf5z0LX9HWpo5kD7K', '646d26a6c08e6.jpeg', 'blahblohh', 'pengguna'),
+(103, 'Yeni', 'yeniaulia621@gmail.com', 'password','646b85539a915.jpg', 'tubes bisakah selesai tanpa dikerjakan? TIDAK BISA NAKKU','pengguna');
 
 -- --------------------------------------------------------
 
@@ -317,7 +327,13 @@ INSERT INTO `tb_story` (`id_story`, `id_pengguna`, `id_tag`, `judul_story`, `isi
 (17, 17, 17, 'How Technologies are the New Hotness', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.','teknologi.jpg','2023-03-19'),
 (18, 18, 18, 'How Programming Made Me a Better Person', 'quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur','program.webp','2023-03-10'),
 (19, 19, 19, 'Why Everyone is Obsessed With Gaming', 'quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?  qui dolorem eum fugiat quo voluptas nulla pariatur?','gaming.jpeg','2023-02-01'),
-(20, 20, 20, 'Why Humor is Killing You', 'inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','humor.jpg','2023-05-10');
+(20, 20, 20, 'Why Humor is Killing You', 'inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','humor.jpg','2023-05-10'),
+(21, 21, 21, 'The Power of Data Analysis', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu libero ac tellus lacinia congue vitae id mauris. Duis eget volutpat nulla. Fusce congue justo et turpis posuere rhoncus. Vestibulum et dui imperdiet, efficitur leo et, varius lectus. Integer non elit at nunc ultrices elementum. Sed eu est et metus laoreet rhoncus. Vivamus ut bibendum tortor. Phasellus elementum nunc risus, id consequat velit congue vitae. Sed elementum nisl sit amet semper hendrerit. Integer lobortis auctor lorem, vitae fringilla purus malesuada sit amet.', 'data-analis.jpeg', '2023-04-25'),
+(22, 22, 22, 'The Rise of Artificial Intelligence', 'Nullam non efficitur purus. Mauris venenatis urna quis ante aliquam, eget ullamcorper mi tincidunt. Integer ut turpis nisl. Cras a eros urna. Proin viverra, purus ut tempus semper, enim diam iaculis tellus, a facilisis elit dui in erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu tellus sit amet enim consequat fringilla sed id ligula.', 'ai.jpeg', '2023-05-02'),
+(23, 23, 23, 'The Future of Robotics', 'Donec eu quam eros. Integer fermentum turpis eu velit varius, et facilisis leo laoreet. Sed faucibus quam nec nibh finibus, sit amet efficitur dolor tincidunt. Suspendisse dignissim metus at odio luctus, sit amet pharetra mi luctus. Phasellus efficitur, ante ac laoreet consequat, neque arcu venenatis lacus, id venenatis velit ante non urna. Aliquam nec elit non diam fermentum tincidunt vitae eu sapien.', 'robot.jpeg', '2023-05-09'),
+(24, 24, 24, 'The Impact of Social Media', 'Vestibulum tempus justo sit amet turpis finibus, sed laoreet neque ultrices. Nam et tortor et nibh sollicitudin congue ac non nisl. Donec condimentum purus nec lectus tincidunt, in scelerisque ante malesuada. Duis dictum congue purus id rhoncus. Nunc convallis pulvinar lacus, eget luctus ante malesuada et. Morbi auctor, tortor in tempus lobortis, dui dui tincidunt dui, id dapibus risus lorem ac mi.', 'sosial.jpeg', '2023-05-16'),
+(25, 25, 25, 'The Importance of Cybersecurity', 'Pellentesque et dapibus risus. Nullam iaculis sapien nec mi tincidunt bibendum. Integer a velit id tortor eleifend egestas a vitae libero. Maecenas ac mauris justo. Nulla rhoncus felis vitae nibh scelerisque, nec convallis mauris malesuada. Sed auctor velit non eros tempus scelerisque. Mauris euismod, nisl nec tincidunt tempus, mauris nisl eleifend turpis, et auctor elit felis nec est.', 'cyber.jpeg', '2023-05-23');
+
 
 
 --
