@@ -10,7 +10,7 @@ if (isset($_SESSION['id_pengguna'])) {
 
   if ($result && mysqli_num_rows($result) > 0) {
       $row = mysqli_fetch_assoc($result);
-      $fotoProfil = "../user/img/" . $row['foto_profil'];
+      $fotoProfil = "../assets/img/" . $row['foto_profil'];
   }
 }
 
@@ -63,7 +63,7 @@ if (isset($_SESSION['id_pengguna'])) {
 
                             if ($result && mysqli_num_rows($result) > 0) {
                                 $row = mysqli_fetch_assoc($result);
-                                $fotoProfil = "../user/img/" . $row['foto_profil'];
+                                $fotoProfil = "../assets/img/" . $row['foto_profil'];
                             }
                         }
                         ?>

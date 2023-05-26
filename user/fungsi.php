@@ -55,7 +55,7 @@ include '../koneksi.php';
       $namaFileBaru .= '.';
       $namaFileBaru .= $ekstensiGambar;
   
-      move_uploaded_file($tmpName,'../user/img/'.$namaFileBaru);
+      move_uploaded_file($tmpName,'../assets/img/'.$namaFileBaru);
   
       return $namaFileBaru;
   
@@ -63,55 +63,49 @@ include '../koneksi.php';
   
 // fungsi untuk registrasi
 if (!function_exists('registrasi')) {
-    function registrasi($data) {
-        function registrasi($user){
-            global $koneksi;
-            $nama=stripslashes(htmlspecialchars($pengguna["nama"]));
-            $email=htmlspecialchars($pengguna["email"]);
-            $password=htmlspecialchars($pengguna["password"]);
-            $password2=htmlspecialchars($pengguna["password2"]);
-        
-            //upload gambar dimasukkan ke function upload
-            $gambar = upload();
-            
-            if(!$gambar)
-            {
-                return false;
-            }
-        
-        
-            // cek username sudah ada atau belum
-            $result = mysqli_query($koneksi, "SELECT nama FROM tb_pengguna WHERE nama='$nama'");
-            if (mysqli_fetch_assoc($result)) {
-                echo "<script>
+    function registrasi($pengguna) {
+        global $koneksi;
+        $nama = stripslashes(htmlspecialchars($pengguna["nama"]));
+        $email = htmlspecialchars($pengguna["email"]);
+        $password = htmlspecialchars($pengguna["password"]);
+        $password2 = htmlspecialchars($pengguna["password2"]);
+
+        //upload gambar dimasukkan ke function upload
+        $gambar = upload();
+
+        if (!$gambar) {
+            return false;
+        }
+
+        // cek username sudah ada atau belum
+        $result = mysqli_query($koneksi, "SELECT nama FROM tb_pengguna WHERE nama='$nama'");
+        if (mysqli_fetch_assoc($result)) {
+            echo "<script>
                 alert('nama tersebut sudah ada! Silahkan pilih nama lain');
                 document.location.href='register.php';
-                </script>"; 
-        
-            }
-        
-            //cek konfirmasi password
-            if ($password!==$password2) {
-                echo "<script>
+                </script>";
+
+        }
+
+        //cek konfirmasi password
+        if ($password !== $password2) {
+            echo "<script>
                 alert('Konfirmasi password Anda tidak sama!');
                 document.location.href='register.php';
-                </script>";  
-        
-                return false;
-            }
-        
-            //enkripsi password
-        
-            $password = password_hash($password, PASSWORD_DEFAULT);
-        
-            //TAMBAHKAN USER BARU KE DATABASE
-            mysqli_query($koneksi,"INSERT INTO tb_pengguna (nama, email, password, foto_profil, bio, role) VALUES ('$nama','$email','$password','$gambar', '', 'user')");
-        
-            return mysqli_affected_rows($koneksi);
-           
+                </script>";
+
+            return false;
         }
-        
+
+        //enkripsi password
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        //TAMBAHKAN USER BARU KE DATABASE
+        mysqli_query($koneksi, "INSERT INTO tb_pengguna (nama, email, password, foto_profil, bio, role) VALUES ('$nama','$email','$password','$gambar', '', 'user')");
+
+        return mysqli_affected_rows($koneksi);
     }
+}
 
     //fungsi query
     function query($query) {
@@ -176,7 +170,6 @@ if (!function_exists('query')) {
 
 
 //tambah pengguna
-//
 function tambah_pengguna($pengguna){
     global $koneksi;
     $nama=stripslashes(htmlspecialchars($pengguna["nama"]));
@@ -308,7 +301,7 @@ function upload_edit()
     $namaFileBaru .= '.';
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName,'../user/img/'.$namaFileBaru);
+    move_uploaded_file($tmpName,'../assets/img/'.$namaFileBaru);
 
     return $namaFileBaru;
 
@@ -437,19 +430,18 @@ $query = "UPDATE tb_pengguna SET
 function tambah_komentar($data)
 {
     global $koneksi;
-
-    $id_artikel = $data['id_artikel'];
-    $id_pengguna = $data['id_pengguna'];
+    $id_pengguna = $_SESSION['id_pengguna'];
+    $tgl_komentar = date("Y-m-d");
     $isi_komentar = htmlspecialchars($data["isi_komentar"]);
-    
 
-    $query = "INSERT INTO komentar (id_pengguna, id_artikel, isi_komentar) 
-    VALUES ('$id_pengguna', '$id_artikel', '$isi_komentar'";
+    $query = "INSERT INTO tb_komentar (id_komentar, id_artikel, id_pengguna, tanggal, komentar) 
+    VALUES ('', '$_POST[id_artikel]', '$id_pengguna', '$tgl_komentar', '$isi_komentar')";
 
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
 }
+
 
 function cari($key)
 {
@@ -481,4 +473,3 @@ function query_cari($data){
     return $result;
     
     }
-}

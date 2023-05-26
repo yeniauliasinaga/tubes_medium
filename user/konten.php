@@ -36,7 +36,7 @@ if (mysqli_num_rows($konten) > 0) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <img class="container" style="width:500px;" src="../assets/berita/<?=$artikel['gambar']?>" alt="gambar">
+                                <img class="container" style="width:500px;" src="../assets/img/<?=$artikel['gambar']?>" alt="gambar">
                             </div>
                             <div class="col mx-4 mx-4 my-4 tengah">
                                 <p class="judul2"><?=$artikel['judul_artikel']?></p>

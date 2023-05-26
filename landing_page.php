@@ -31,7 +31,7 @@ $result = mysqli_query($koneksi, $query);
             <article class="col-12 col-sm-12 col-md-4">
                 <div class="row">
                     <div class="col-10">
-                        <img class="rounded-circle img-responsive" src="user/img/<?=$artikel['foto_profil']?>" alt=""
+                        <img class="rounded-circle img-responsive" src="assets/img/<?=$artikel['foto_profil']?>" alt=""
                             style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
                         <?=$artikel['nama']?>
                         <span class="text-muted">in</span>
@@ -55,7 +55,7 @@ $result = mysqli_query($koneksi, $query);
                 <div class="row mb-2">
                     <div class="col-12">
                         <small>
-                            <img class="rounded-circle img-responsive" src="user/img/<?=$artikel['foto_profil']?>" alt=""
+                            <img class="rounded-circle img-responsive" src="assets/img/<?=$artikel['foto_profil']?>" alt=""
                                 style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
                             <?=$artikel['nama']?>
                         </small> <br>

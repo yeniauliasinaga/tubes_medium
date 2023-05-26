@@ -77,7 +77,7 @@ if (isset($_POST["btn_cari"])) {
                         <div class="card h-100">
                             <div class="card-body">
                                 <small>
-                                    <img class="rounded-circle img-responsive" src="img/<?=$artikel['foto_profil']?>"
+                                    <img class="rounded-circle img-responsive" src="../assets/img/<?=$artikel['foto_profil']?>"
                                         alt=""
                                         style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
                                     <?=$artikel['nama']?>
@@ -137,7 +137,7 @@ if (isset($_POST["btn_cari"])) {
                                     </li>
                                 </ul>
                                 <div class="col-3">
-                                    <img class="w-100  d-none d-sm-block" src="../assets/berita/<?=$artikel['gambar']?>"
+                                    <img class="w-100  d-none d-sm-block" src="../assets/img/<?=$artikel['gambar']?>"
                                         alt="gambar">
                                 </div>
                             </div>

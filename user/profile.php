@@ -36,7 +36,7 @@
 <div class="container text-start">
     <div class="row">
         <div class="col-sm-9 mt-5 mb-5 pt-5">
-            <h1><?php echo $_SESSION['nama']; ?></h1>
+            <h1><?php echo $_SESSION['nama'] ?? ''; ?></h1>
             <div class="text-center mt-5 pt-3">
                 <div class="row row-cols-auto">
                     <a class="col" style="text-decoration: none; color: black;" href="home.php">Home</a>
@@ -50,19 +50,19 @@
                         href="../Logo/logo.png">
                         <div class="s by">
                             <!--Foto user-->
-                            <img alt="<?php echo $_SESSION['nama']; ?>" class="rounded-circle img-responsive"
-                                src="../user/img/<?php echo $row['foto_profil']; ?>" width="84" height="65"
-                                loading="lazy">
+                            <img alt="<?php echo $_SESSION['nama'] ?? ''; ?>" class="rounded-circle img-responsive"
+                                src="../assets/img/<?php echo $row['foto_profil'] ?? ''; ?>" width="88" height="88"
+                                border-radius:50%;>
                             <div class="cg ch s pz qa ck u be cl">
                             </div>
                         </div>
                     </a>
                     <div class="qb s">
                         <h2 class="pw-author-name al fh fi ag fj bp">
-                            <span class="jb"><?php echo $row['nama']; ?></span>
+                            <span class="jb"><?php echo $row['nama'] ?? ''; ?></span>
                         </h2>
                         <h6 class="pw-author-name al fh fi ag fj bp">
-                            <span class="jb"><?php echo $row['bio']; ?></span>
+                            <span class="jb"><?php echo $row['bio'] ?? ''; ?></span>
                         </h6>
                         </a>
                     </div>
@@ -91,9 +91,9 @@
                                             <div class="row">
                                                 <div class="col-sm-3">
                                                     <input type="hidden" name="gambarlama"
-                                                        value="<?php echo $row['foto_profil']; ?>">
-                                                    <img src="img/<?php echo $row['foto_profil']; ?>" alt="ini gambar"
-                                                        width="40%">
+                                                        value="<?php echo $row['foto_profil'] ?? ''; ?>">
+                                                    <img src="../assets/img/<?php echo $row['foto_profil'] ?? ''; ?>"
+                                                        alt="ini gambar" width="40%" class="img-thumbnail">
                                                     <input id="gambar" type="file" class="form-control" name="gambar">
                                                 </div>
                                                 <div class="col-sm-8">
@@ -108,9 +108,9 @@
                                             </div>
                                             <div class="text-start">
                                                 <p><input type="text" name="nama" id=""
-                                                        value="<?php echo $row['nama']; ?>"></p>
+                                                        value="<?php echo $row['nama'] ?? ''; ?>"></p>
                                                 <p><input type="text" name="bio" id=""
-                                                        value="<?php echo $row['bio']; ?>"></p>
+                                                        value="<?php echo $row['bio'] ?? ''; ?>"></p>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
